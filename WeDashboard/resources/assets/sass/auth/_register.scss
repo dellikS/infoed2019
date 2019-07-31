@@ -1,0 +1,164 @@
+//colors
+$color_0: #5dc21f;
+$color_1: rgba(10,10,10, 0.9);
+$color_2: rgb(204,204,204);
+$color_3: #fff;
+$color_4: #f9f9f9;
+$color_5: #dadada;
+$color_6: #56b41c;
+$color_7: #555;
+$color_8: #eee;
+$color_9: #ccc;
+$color_10: #fff;
+
+$watermark-info: url(~/../../assets/img/info-watermark.png);
+$select-image-green: url(~/../../assets/img/index.png);
+
+.invalid-phone {
+	width: 100%;
+	margin-top: 0.25rem;
+	font-size: 80%;
+	color: #dc3545;
+}
+
+  fieldset:not(:first-of-type) {
+	display: none;
+  }
+
+  #first {
+	display:block;
+  }
+
+.secondary-background {
+	background: $brand-primary !important;
+}
+.bg-black {
+	background-color: $color_1 !important;
+}
+.profile {
+	margin-left: 10px;
+	padding: 4px 0;
+	display: inline-block;
+	vertical-align: middle;
+}
+#navbar-brand {
+	color: $color_2;
+}
+#navcol-1 {
+	text-transform: uppercase;
+	font-size: 0.875rem;
+	font-weight: bold;
+	a:hover {
+		text-decoration: underline;
+	}
+}
+.primary {
+	padding: 30px;
+}
+
+.step-status {
+	color: $white;
+	font-size: 16px;
+	height: 25px;
+}
+
+.authForm {
+	background-color: $color_4;
+	padding: 20px;
+}
+
+#registerBox {
+	margin: 0 auto;
+	padding: 0;
+	.info-box {
+		color: $white;
+		padding: 5px 20px 20px;
+		font-size: 16px;
+		h2 {
+			display: block;
+			margin-top: 5px;
+			font-weight: 400;
+			font-size: 24px;
+			line-height: 1.3em;
+		}
+		ul {
+			font-weight: 300;
+		}
+	}
+	.watermark {
+		background-image: $watermark-info;
+		background-repeat: no-repeat;
+		background-position: right bottom;
+		background-color: $brand-primary;
+		height: 100%;
+	}
+	h4 {
+		font-weight: 400;
+		font-size: 18px;
+		margin-top: 11px;
+		margin-bottom: 11px;
+	}
+	ul.pointer {
+		padding: 0 15px;
+		li {
+			margin: 10px 0;
+		}
+	}
+}
+#progressBar {
+	padding: 10px;
+	margin-bottom: 10px;
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li {
+			float: left;
+			width: 15%;
+			text-align: center;
+			img {
+				width: 38px;
+			}
+		}
+	}
+}
+@media(min-width: 768px) {
+	#progressBar ul li img {
+		width: 56px;
+	}
+}
+.pad-0 {
+	padding: 0 !important;
+}
+
+@media(max-width: 992px) {
+	.hide-after-m {
+		display: none;
+	}
+}
+@media(min-width: 992px) {
+	.show-after-m {
+		display: none;
+	}
+}
+.authForm {
+
+	select.form-control {
+		background: $select-image-green center right no-repeat $white;
+	}
+	
+	.btn.btn-next  , .btn.btn-prev{
+		background-color: $brand-primary;
+		border-radius: 0;
+		border: none;
+		width: 150px;
+		color: $white;
+		height: 40px;
+		&:hover {
+			background-color: $brand-secondary;
+		}
+	}
+}
+#navcol-2 img {
+	position: absolute;
+}

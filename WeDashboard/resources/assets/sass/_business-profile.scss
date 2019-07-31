@@ -1,0 +1,286 @@
+/*.business-sidebar {
+    border-right: 2px solid $body-bg;
+    padding: 0 !important;
+    .nav-pills {
+        a {
+            border-radius: 0 !important;
+            border-bottom: 2px solid $body-bg;
+            &:first-child{
+                border-radius: $border-radius $border-radius 0 0 !important;
+                @media(min-width: $bs4-phone) {
+                    border-radius: $border-radius 0 0 0 !important;
+                }
+            }
+            &.active {
+                background: $secondary;
+            }
+        }
+    }
+}
+
+.account-admin-subnav {
+    li {
+        &:first-child {
+            border-radius: $border-radius 0 0 $border-radius;
+        }
+        &:last-child {
+            border-radius: 0 $border-radius $border-radius 0;
+        }
+    }
+}*/
+
+//colors
+
+$business_banner: url(~/../../assets/img/business_banner.jpg);
+
+$color_4: rgba(0,0,0,0.25);
+$color_5: rgb(249,249,249);
+$color_6: rgb(102,102,102);
+$color_7: rgba(0,0,0,0.06);
+$color_8: rgba(0, 0, 0, 0.02);
+
+.tab-system {
+	background: $silver-white;
+	border-bottom: 1px solid #e6e6e6;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 18;
+	#navigation a {
+		color: $color_6;
+		margin: 0 1rem;
+		display: inline-flex;
+		padding: .75em 0;
+	}
+
+	#navigation a.active{
+		color: #1b1b1b;
+		text-decoration: none;
+	}
+}
+
+.business-zone {
+	&.banner {
+		background-image: $business_banner;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-attachment: fixed;
+		position: relative;
+		&.business-view {
+			min-height: 165px;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: linear-gradient(to bottom, $thirdbrand-primary,$thirdbrand-secondary);
+			opacity: .6;
+		}
+	}
+	&.banner-deleted {
+		background-image: $business_banner;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		position: relative;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: linear-gradient(to bottom, #6c2127, #481117);
+			opacity: .6;
+		}
+	}
+
+	.content {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	.business-info {
+		padding: 13px 0;
+		color: $silver-white;
+		h4 {
+			font-weight: 600;
+			font-size: 28px;
+			margin: 0;
+		}
+
+		span {
+			font-size: 16px;
+			font-weight: 400;
+		}
+		i {
+			margin: 0 .25em;
+			cursor: pointer;
+		}
+	}
+	.other-options{
+		background: none;
+		border: 0;
+		padding: 0;
+		font-weight: 400;
+		font-size: 16px;
+		&:focus {
+			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+			border-radius: 0;
+			//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+			box-shadow: none;
+			border: 0;
+		}
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.dropdown-menu {
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 3;
+		width: 220px;
+		z-index: 18;
+		border: 1px solid rgba(0, 0, 0, .15);
+		border-radius: 3px;
+		box-shadow: 0 3px 8px rgba(0, 0, 0, .15);
+		padding: .5em 0;
+		background-color: $color_5;
+		&:before {
+			border-bottom: 8px solid $color_5;
+			border-left: 8px solid transparent;
+			border-right: 8px solid transparent;
+			border-top: 0 solid transparent;
+			content: " ";
+			height: 0;
+			position: absolute;
+			top: -8px;
+			left: 42%;
+			width: 0;
+		}
+		.dropdown-item {
+			padding: .75em;
+			color: $color_6;
+			border-bottom: 1px solid transparent;
+			&:hover {
+				background: linear-gradient(to bottom, $brand-primary,$brand-secondary);
+				color: $white;
+				border-bottom: 1px solid rgba(0, 0, 0, .15);
+			}
+		}
+	}
+}
+
+$color_concord_approx: #696969;
+
+
+
+.business-info-box {
+	.card {
+		border: 0;
+		border-radius: 0;
+		-webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.05);
+		-moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.05);
+		box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.05);
+	}
+	.business-info-section {
+		margin: 1.5em 0;
+		.business-info {
+			&.project {
+				background: #FFFFD2;
+				border: 1px solid #F5F5B4;
+				padding: 1em;
+				margin: 1em;
+				box-shadow:  0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+				transform: rotate(2deg);
+				-moz-transition:-moz-transform .15s linear;
+				-o-transition:-o-transform .15s linear;
+				-webkit-transition:-webkit-transform .15s linear;
+				transition: transform .15s linear;
+				.info {
+					font-family:"Reenie Beanie";
+					font-size: 28px;
+					line-height: 1;
+				}
+			&:hover {
+				-webkit-transform: scale(1.025);
+				-moz-transform: scale(1.025);
+				-o-transform: scale(1.025);
+				transform: scale(1.025);
+				box-shadow:  0px 0px 20px 0px rgba(0, 0, 0, 0.075);
+			}
+			
+			}
+			margin: 1em 0;
+			.label {
+				font-weight: 600;
+				color: $color_concord_approx;
+				font-size: 14px;
+			}
+			.info {
+				font-weight: 400;
+				color: $thirdbrand-text;
+				font-size: 17px;
+				
+				a {
+					color: $secondbrand-primary;
+				}
+			}
+		}
+		.header {
+			border-bottom: 1px solid rgb(224,224,224);
+		}
+		.title {
+			text-transform: uppercase;
+			font-weight: 600;
+			color: $color_concord_approx;
+			font-size: 20px;
+		}
+	}
+}
+
+@media(max-width: 992px) {
+	.business-zone {
+		.business-info {
+			padding: 8px 0;
+			h4 {
+				font-size: 22px;
+			}
+			span {
+				font-size: 15px;
+			}
+		}
+		.other-options  {
+			font-size: 15px;
+		}
+		.business-picture img {
+			width: 85px;
+			height: 85px;
+		}
+	}
+}
+@media(max-width: 576px) {
+	.business-zone {
+		.business-info {
+			padding: 6px 0;
+			h4 {
+				font-size: 18px;
+			}
+			span {
+				font-size: 14px;
+			}
+		}
+		.other-options  {
+			font-size: 14px;
+		}
+		.business-picture img {
+			width: 75px;
+			height: 75px;
+		}
+	}
+}

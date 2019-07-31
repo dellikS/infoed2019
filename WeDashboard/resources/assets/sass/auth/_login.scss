@@ -1,0 +1,109 @@
+//colors
+$color_0: #dadada;
+$color_1: #56b41c;
+$color_2: #5dc21f;
+$color_3: #fff;
+$color_4: rgba(255,255,255,0.25);
+$color_5: #ff752f;
+$color_6: #f19363;
+$color_7: #f98143;
+
+//@extend-elements
+//original selectors
+//.box-light ol >li, .box-light p
+%extend_1 {
+	font-size: 15px;
+	color: $white;
+	margin-bottom: 10px;
+}
+
+.invalid-login{
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+    color: red;
+}
+
+.loginForm {
+	fieldset {
+		padding: 25px;
+		margin-bottom: 25px;
+		text-align: left;
+    }
+    .form-check{
+        color: $white;
+    }
+	.container {
+		max-width: 936px;
+	}
+	a {
+		font-weight: 300;
+		color: $white;
+		font-size: 18px;
+	}
+	#login-button {
+		background: transparent;
+		border: 1px solid $white;
+		margin-right: 10%;
+		text-transform: uppercase;
+		&:hover {
+			background: $color_4;
+		}
+	}
+	#register-button {
+		background: $color_5;
+		border: 1px solid $white;
+		text-transform: uppercase;
+		&:hover {
+			background: $color_6;
+			border: 0;
+			border: 1px solid $color_7;
+		}
+	}
+	section#sectionLogin {
+		background: $brand-secondary;
+	}
+	.btn.btn-primary {
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 0;
+		width: 184px;
+		height: 40px;
+		font-size: 18px;
+		font-weight: 500;
+	}
+}
+
+.box-light ol {
+    margin-left:-40px;
+}
+    
+#primary-login {
+	margin-top: 100px;
+}
+
+
+.flat {
+	margin-bottom: 0 !important;
+	margin-top: 0 !important;
+}
+.box-light {
+	h4 {
+		color: $white;
+		font-size: 18px;
+		font-weight: 400;
+	}
+	ol {
+		list-style-position: inside;
+		> li {
+			@extend %extend_1;
+		}
+	}
+	p {
+		@extend %extend_1;
+	}
+}
+@media(max-width: 992px) {
+	.box-light {
+		margin-top: 30px;
+	}
+}

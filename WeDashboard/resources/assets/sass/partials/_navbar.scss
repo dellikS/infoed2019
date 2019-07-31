@@ -1,0 +1,520 @@
+//colors
+$color_0: #f0f0f2;
+$color_1: #fff;
+$color_2: rgba(0, 0, 0, .25);
+$color_3: #ccc;
+$color_4: #f0f0f0;
+$color_5: #666;
+$color_6: #e5e5e5;
+$color_7: rgba(0, 0, 0, 0.02);
+$color_8: #e6e6e6;
+$color_9: #fafafa;
+$color_10: #010101;
+$color_11: #080808;
+$color_12: #5dc21f;
+$color_13: #333;
+$color_14: #999;
+$color_16: #000;
+$color_17: rgba(0, 0, 0, 0.5);
+$color_18: #eee;
+$color_19: #2a3a49;
+$color_20: #f33;
+
+//urls
+$url_0: url(~/../../assets/img/footer-money.png);
+
+@media(min-width: 1200px) {
+	.toggle-nav {
+		display: none;
+	}
+	#is-auth.dashboard-container {
+		left: 280px !important;
+	}
+}
+.dashboard-container {
+	position: absolute;
+	overflow-y: scroll;
+	top: 44px;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+.sidebar {
+	top: 44px;
+	bottom: 0;
+	background: $white;
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+	position: fixed;
+	right: -400px;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: right .15s ease-in-out .15s;
+	width: 400px;
+	z-index: 21;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: 0 3px 8px $color_2;
+	&.slide {
+		right: 0;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: right .15s ease-in-out;
+	}
+	&.slide::before {
+		top: -6px;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: top .15s ease-in-out .15s;
+	}
+}
+@media(max-width: 528px) {
+	.sidebar.slide {
+		width: 100% !important;
+	}
+}
+.sidebar::before {
+	border-bottom: 8px solid $white;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-top: 0 solid transparent;
+	content: ' ';
+	height: 0;
+	position: absolute;
+	top: -8px;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: top .15s ease-in-out;
+	width: 0;
+}
+#user-sidebar {
+	&.sidebar::before {
+		right: 106px;
+	}
+	&.sidebar {
+
+		.user-info {
+			padding: 30px;
+			//Instead of the line below you could use @include box-sizing($bs)
+			box-sizing: border-box;
+			width: 100%;
+			color: $color_5;
+			border-bottom: 1px solid $color_8;
+			h4 {
+				font-size: 28px;
+				margin: 0;
+				line-height: 1.2em;
+			}
+		}
+		.user-options {
+			ul {
+				list-style-type: none;
+				margin-top: 1em;
+			}
+			li {
+				cursor: pointer;
+				&:hover {
+					background-color: $color_9;
+				}
+				a {
+					display: block;
+					line-height: 20px;
+					padding: 25px 40px;
+					//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+                    transition: all .01s ease-in;
+                    text-decoration: none;
+                    color: $color_5;
+                    &:hover {
+                        color: $secondbrand-primary;
+                    }
+					i {
+						font-size: 20px;
+						margin-right: 20px;
+						//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+						transition: all .01s ease-in;
+					}
+				}
+			}
+		}
+	}
+}
+#notification-sidebar {
+	&.sidebar::before {
+		right: 42px;
+	}
+	&.sidebar {
+		.notification-title {
+			position: absolute;
+			width: 100%;
+			background-color: $white;
+			top: 0;
+			border-bottom: 1px solid $color_3;
+			padding: 20px 20px 10px;
+			//Instead of the line below you could use @include box-sizing($bs)
+			box-sizing: border-box;
+			h3 {
+				font-size: 24px;
+				font-weight: 600;
+			}
+		}
+		.notifications-list {
+			bottom: 0;
+			overflow-y: auto;
+			overflow-x: hidden;
+			position: absolute;
+			top: 68px;
+			width: 100%;
+		}
+		.notifications-empty {
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			text-align: center;
+			vertical-align: center;
+			color: $color_14;
+			line-height: 1.2;
+			.area {
+				position: relative;
+				top: 45%;
+				left: 50%;
+				transform: translate(-50%,0%);
+				i {
+					font-size: 40px;
+				}
+			}
+		}
+		.the-time {
+			display: block;
+			background-color: $color_4;
+			color: $color_5;
+			padding: 10px 20px;
+			height: 35px;
+			line-height: 14px;
+			font-size: 14px;
+
+			box-sizing: border-box;
+		}
+
+		.bubble {
+			content: '';
+			width: 10px;
+			height: 10px;
+			background-color: $brand-primary;
+			display: inline-block;
+			border-radius: 50%;
+			position: relative;
+		}
+
+		.the-content {
+			border-bottom: 1px solid $color_6;
+			box-sizing: border-box;
+			padding: 20px;
+			width: 100%;
+			font-weight: 500;
+			transition: all .01s ease-in;
+			cursor: pointer;
+			&:hover {
+				background-color: $color_7;
+			}
+			.notification-header {
+				font-weight: 400;
+				font-size: 13px;
+				line-height: 1.7;
+				display: inline;
+				i {
+					margin-right: 4px;
+					font-size: 14px;
+				}
+			}
+			.notification-info {
+				color: $color_5;
+				h5 {
+					font-size: 16px;
+					margin: 5px 14px 10px;
+					font-weight: bold;
+				}
+				p {
+					font-size: 16px;
+					margin: 5px 14px 10px;
+				}
+			}
+		}
+	}
+}
+.sidebar-left {
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: .2s;
+	overflow-y: auto;
+	width: 280px;
+	background-color: $color_10;
+	position: fixed;
+	top: 44px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 22;
+	&.slide {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate(0px, 0);
+	}
+
+	.dropdown-container {
+		display: none;
+		background-color: $color_19;
+		position: absolute;
+		z-index: 25;
+		width: 100%;
+		&.show {
+			display: block;
+		}
+		a:hover{
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+	}
+
+	.no-text-selection {
+
+		-webkit-touch-callout: none; 
+		-webkit-user-select: none; 
+		 -khtml-user-select: none; 
+		   -moz-user-select: none; 
+			-ms-user-select: none; 
+				user-select: none; 
+	}
+
+	#admin-options-toggle {
+		color: $color_18;
+	}
+	
+	.content-menu {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		min-height: 640px;
+		background-image: $url_0;
+		background-position: left bottom;
+		background-size: 90%;
+		background-repeat: no-repeat;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: all .6s ease-in-out;
+	}
+	ul {
+		margin: 20px 0;
+		li {
+			a {
+				color: $color_3;
+				display: block;
+				cursor: pointer;
+				padding: 20px 30px;
+				line-height: 20px;
+				position: relative;
+				outline: none;
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: all .01s ease-in;
+				text-decoration: none;
+				&.active {
+					color: $brand-primary;
+					background-color: $color_2;
+				}
+			}
+			&.real-item:hover {
+				background-color: $color_11;
+			}
+		}
+	}
+
+	.real-item.selected {
+		background-color: $color_11;
+	}
+
+	hr {
+		color: $color_3;
+	}
+	.footer {
+		position: absolute;
+		bottom: 105px;
+		left: 0;
+		right: 0;
+		color: $color_5;
+		text-align: center;
+		font-size: 12px;
+		a {
+			color: $color_5;
+		}
+		.copyright {
+			color: $color_14;
+			margin-top: 10px;
+			display: inline-block;
+			font-size: 13px;
+		}
+	}
+}
+.dashboard-nav {
+	width: 100%;
+	height: 44px;
+	background-color: $navbar-color;
+	padding: 0 !important;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 21;
+	.logo-part {
+		position: relative;
+		height: 44px;
+		width: 280px;
+		margin: 0;
+		text-align: center;
+		display: none;
+	}
+	.logo {
+		width: 90px;
+		vertical-align: inherit;
+	}
+	#is-auth.logo-part {
+		background-color: $black;;
+	}
+}
+@media(min-width: 576px) {
+	.dashboard-nav #is-guest.logo-part {
+		display: block;
+	}
+}
+@media(min-width: 768px) {
+	.dashboard-nav #is-auth.logo-part {
+		display: block;
+	}
+}
+@media(max-width: 1200px) {
+	.sidebar-left {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate(-280px, 0);
+		&.slide {
+			//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+			transform: translate(0px, 0);
+		}
+	}
+	.dashboard-nav #is-auth.logo-part {
+		background-color: transparent;
+		margin: 0 auto;
+	}
+	.overlay.slide {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+@media(max-height: 740px) {
+	.sidebar-left .content-menu {
+		background-position: 0 1000px;
+	}
+}
+@media(max-height: 860px) {
+	.sidebar-left .content-menu {
+		background-size: 80%;
+	}
+}
+.sidebar-left-icon {
+	margin: 0 20px 0 0;
+	font-size: 20px;
+	position: relative;
+	top: 2px;
+}
+.line {
+	border-bottom: 1px solid $color_13;
+	margin: 15px 40px;
+}
+.margin-0 {
+	margin: 0;
+}
+.overlay {
+	visibility: hidden;
+	opacity: 0;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: $color_17;
+	z-index: 20;
+	top: 44px;
+	transition: visibility 0s, opacity 0.15s linear;
+}
+.main_content {
+	display: block;
+	position: relative;
+	min-height: 100%;
+	width: 100%;
+	z-index: 0;
+}
+.user-zone {
+	top: 0;
+	right: 20px;
+	position: absolute;
+	height: 44px;
+}
+
+.user-name-container {
+	cursor: pointer;
+	float: left;
+	position: relative;
+	text-align: center;
+	width: 120px;
+	.user-name {
+		line-height: 44px;
+		color: $white;
+		width: 100%;
+		text-align: right;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+.navbar-item {
+	display: inline-block;
+	.content {
+		cursor: pointer;
+		float: left;
+		text-align: center;
+		height: 44px;
+		i {
+			line-height: 44px;
+			font-size: 20px;
+			color: $white;
+		}
+		.link {
+			line-height: 44px;
+			font-size: 16px;
+			color: $color_18;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		img {
+			background: $color_19;
+			width: 34px;
+			height: 34px;
+			line-height: 44px;
+			border-radius: 50%;
+			margin: 5px;
+		}
+	}
+}
+#is-auth .navbar-item .content {
+	width: 60px;
+}
+#is-guest .navbar-item .content {
+	width: auto;
+	margin: 0 .5rem;
+}
+#notifications-counter.circle {
+	background-color: $color_20;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 18px;
+	color: $white;
+	height: 18px;
+	line-height: 18px;
+	position: absolute;
+	right: 12px;
+	text-align: center;
+	top: 4px;
+	width: 18px;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: width .2s;
+}

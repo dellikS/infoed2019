@@ -1,0 +1,22 @@
+.badge {
+	&.badge-primary {
+		background-color: $brand-primary;
+
+	}
+}
+
+.badge-job {
+	border-radius: .25em;
+	color: $white;
+	padding: .25em;
+	font-size: 85%;
+
+}
+
+.panel-default > .panel-heading {
+	.badge {
+		&.badge-primary {
+			background-color: $brand-primary;
+		}
+	}
+}

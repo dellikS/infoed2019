@@ -1,0 +1,266 @@
+/*.profile-sidebar {
+    border-right: 2px solid $body-bg;
+    padding: 0 !important;
+    .nav-pills {
+        a {
+            border-radius: 0 !important;
+            border-bottom: 2px solid $body-bg;
+            &:first-child{
+                border-radius: $border-radius $border-radius 0 0 !important;
+                @media(min-width: $bs4-phone) {
+                    border-radius: $border-radius 0 0 0 !important;
+                }
+            }
+            &.active {
+                background: $secondary;
+            }
+        }
+    }
+}
+
+.account-admin-subnav {
+    li {
+        &:first-child {
+            border-radius: $border-radius 0 0 $border-radius;
+        }
+        &:last-child {
+            border-radius: 0 $border-radius $border-radius 0;
+        }
+    }
+}*/
+
+//colors
+
+$profile_banner: url(~/../../assets/img/profile-banner.jpg);
+
+$color_4: rgba(0,0,0,0.25);
+$color_5: rgb(249,249,249);
+$color_6: rgb(102,102,102);
+$color_7: rgba(0,0,0,0.06);
+$color_8: rgba(0, 0, 0, 0.02);
+
+.tab-system {
+	background: $silver-white;
+	border-bottom: 1px solid #e6e6e6;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 19;
+	#navigation a {
+		color: $color_6;
+		margin: 0 1rem;
+		display: inline-flex;
+		padding: .75em 0;
+	}
+
+	#navigation a.active{
+		color: $brand-primary;
+		text-decoration: none;
+	}
+}
+
+.profile-zone {
+	&.banner {
+		background-image: $profile_banner;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-attachment: fixed;
+		position: relative;
+		&.profile-view {
+			min-height: 165px;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: linear-gradient(to bottom, $secondbrand-primary,$secondbrand-secondary);
+			opacity: .6;
+		}
+	}
+	&.banner-deleted {
+		background-image: $profile_banner;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		position: relative;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: linear-gradient(to bottom, #6c2127, #481117);
+			opacity: .6;
+		}
+	}
+
+	.content {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	.profile-picture {
+		margin-right: 15px;
+		img {
+			background: $color_4;
+			width: 100px;
+			height: 100px;
+			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+			border-radius: 50%;
+		}
+	}
+	.profile-info {
+		padding: 13px 0;
+		color: $silver-white;
+		h4 {
+			font-weight: 600;
+			font-size: 28px;
+			margin: 0;
+		}
+
+		span {
+			font-size: 16px;
+			font-weight: 400;
+		}
+		i {
+			margin: 0 .25em;
+			cursor: pointer;
+		}
+	}
+	.other-options, #delete-user {
+		background: none;
+		border: 0;
+		padding: 0;
+		font-weight: 400;
+		font-size: 16px;
+		&:focus {
+			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+			border-radius: 0;
+			//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+			box-shadow: none;
+			border: 0;
+		}
+	}
+
+	.dropdown-menu {
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 3;
+		width: 220px;
+		z-index: 18;
+		border: 1px solid rgba(0, 0, 0, .15);
+		border-radius: 3px;
+		box-shadow: 0 3px 8px rgba(0, 0, 0, .15);
+		padding: .5em 0;
+		background-color: $color_5;
+		&:before {
+			border-bottom: 8px solid $color_5;
+			border-left: 8px solid transparent;
+			border-right: 8px solid transparent;
+			border-top: 0 solid transparent;
+			content: " ";
+			height: 0;
+			position: absolute;
+			top: -8px;
+			left: 42%;
+			width: 0;
+		}
+		.dropdown-item {
+			padding: .75em;
+			color: $color_6;
+			border-bottom: 1px solid transparent;
+			&:hover {
+				background: linear-gradient(to bottom, $brand-primary,$brand-secondary);
+				color: $white;
+				border-bottom: 1px solid rgba(0, 0, 0, .15);
+			}
+		}
+	}
+}
+
+$color_concord_approx: #696969;
+
+.user-info-box {
+	.card {
+		border: 0;
+		border-radius: 0;
+		-webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.05);
+		-moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.05);
+		box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.05);
+	}
+	.user-info-section {
+		margin: 1.5em 0;
+		.profile-info {
+			margin: 1em 0;
+			.label {
+				font-weight: 600;
+				color: $color_concord_approx;
+				font-size: 14px;
+			}
+			.info {
+				font-weight: 400;
+				color: $secondbrand-text;
+				font-size: 17px;
+				
+				a {
+					color: $secondbrand-primary;
+				}
+			}
+		}
+		.header {
+			border-bottom: 1px solid rgb(224,224,224);
+		}
+		.title {
+			text-transform: uppercase;
+			font-weight: 600;
+			color: $color_concord_approx;
+			font-size: 20px;
+		}
+	}
+}
+
+@media(max-width: 992px) {
+	.profile-zone {
+		.profile-info {
+			padding: 8px 0;
+			h4 {
+				font-size: 22px;
+			}
+			span {
+				font-size: 15px;
+			}
+		}
+		.other-options, #delete-user  {
+			font-size: 15px;
+		}
+		.profile-picture img {
+			width: 85px;
+			height: 85px;
+		}
+	}
+}
+@media(max-width: 576px) {
+	.profile-zone {
+		.profile-info {
+			padding: 6px 0;
+			h4 {
+				font-size: 18px;
+			}
+			span {
+				font-size: 14px;
+			}
+		}
+		.other-options, #delete-user  {
+			font-size: 14px;
+		}
+		.profile-picture img {
+			width: 75px;
+			height: 75px;
+		}
+	}
+}

@@ -1,0 +1,15 @@
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// AOS (Animate On Scroll)
+@import "~aos/dist/aos.css";
+
+// General
+@import "inc/errors";
+@import "inc/includes";
+@import "inc/regular";
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Bitter');

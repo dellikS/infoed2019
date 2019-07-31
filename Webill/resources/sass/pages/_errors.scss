@@ -1,0 +1,79 @@
+/* -----------------------------------------------------------------------------
+  ERRORS STYLESHEETS COMPONENT
+  For error pages like 404, 500, etc.
+----------------------------------------------------------------------------- */
+
+//colors
+$color_0: #fff;
+$color_1: #5dc21f;
+$color_2: #163408;
+$color_3: #505050;
+$color_4: #6a6a6a;
+$color_5: #fafafa;
+$color_6: #f4f4f4;
+$color_7: rgb(10, 10, 10);
+
+body.errors {
+	background-color: $color_7;
+}
+
+.section-error {
+	color: $color_0;
+	background: $color_1;
+	padding: 4rem 0 0;
+	h1 {
+		color: $color_0;
+		font-size: 54px;
+		strong {
+			color: $color_2;
+		}
+	}
+	.describe-error {
+		margin-top: 24px;
+		h2 {
+			font-size: 24px;
+		}
+	}
+}
+.usefull-links {
+	padding: 2rem 0;
+	background: $color_0;
+	color: $color_3;
+	h2 {
+		font-size: 24px;
+	}
+	h3 {
+		font-size: 16px;
+		margin: 0;
+		color: $color_1;
+	}
+	p {
+		font-size: 12px;
+		line-height: 1.2;
+		color: $color_4;
+		margin-top: 4px;
+	}
+	.custom-card {
+		padding: .5rem;
+		background-color: $color_5;
+		margin-right: 2px;
+		margin-bottom: 20px;
+		height: auto;
+		border: 2px solid transparent;
+		&:hover {
+			cursor: pointer;
+			border: 2px solid $color_1;
+		}
+	}
+	.row.row-3 {
+		margin-top: 36px;
+	}
+}
+.still-not-working {
+	padding: 3rem 0;
+	background: $color_6;
+	color: $color_3;
+	a {
+		color: $color_1;
+	}
+}

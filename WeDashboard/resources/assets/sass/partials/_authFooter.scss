@@ -1,0 +1,82 @@
+
+$color_3: #eeeeee;
+$color_5: #ddd;
+$color_6: #999;
+$color_7: #f9f9f9;
+
+//urls
+$select-image: url(~/../../assets/img/index-2.png);
+
+#footer {
+	.footer-closer {
+		padding: 25px 0;
+		color: $white;
+		background-color: $black;
+		h4 {
+			font-size: 18px;
+			font-weight: 400;
+			line-height: 1.4;
+			text-transform: uppercase;
+		}
+	}
+	#social-media {
+		a {
+			display: inline-block;
+			text-decoration: none;
+			height: 40px;
+			width: 40px;
+			line-height: 40px;
+		}
+		li {
+			background: $white;
+			display: inline-block;
+			text-align: center;
+			&:hover {
+				background: $color_3;
+			}
+		}
+		i {
+			font-size: 22px;
+			color: $black;
+		}
+	}
+	.footer-content {
+		padding: 25px 0;
+		background: $color_7;
+		a {
+			display: inline-block;
+			line-height: 2rem;
+			color: $brand-secondary;
+		}
+		h4 {
+			text-transform: uppercase;
+			font-weight: 400;
+			font-size: 18px;
+			line-height: 1.4;
+		}
+	}
+	.copyright {
+		padding: 10px 0;
+		text-align: center !important;
+		font-size: 14px;
+		color: $color_6;
+		p {
+			margin-top: 0;
+		}
+	}
+	select.form-control {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+		text-indent: .01px;
+		text-overflow: "";
+		box-shadow: none;
+		padding-right: 50px;
+		border-radius: 0;
+		background: $select-image center right no-repeat $white;
+		border: 1px solid $color_5;
+		max-width: 75%;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}

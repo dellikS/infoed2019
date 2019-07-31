@@ -1,0 +1,350 @@
+.input-group select.form-control:first-child {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-position: right 50%;
+    background-repeat: no-repeat;
+    padding: .5em;
+    padding-right: 1.5em;
+    //@include vendor(border-radius, 6px 0 0 6px !important);
+}
+
+
+
+form {
+	.active {
+    	color: $brand-primary;
+	}
+	&.form-inline {
+	    display: inline-block;
+	}
+}
+
+.input-group {
+	position: relative;
+	display: table;
+	border-collapse: separate;
+	.form-control {
+		position: relative;
+		z-index: 2;
+		float: left;
+		width: 100%;
+		margin-bottom: 0;
+	}
+}
+
+.input-group-append {
+	height: 40px;
+}
+
+.input-group-addon {
+	padding: 9px;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1;
+	color: $grey;
+	text-align: center;
+	border-radius: 0;
+	width: 1%;
+	vertical-align: middle;
+	display: table-cell;
+	white-space: nowrap;
+	border-top: 1px solid $light-grey;
+	border-bottom: 1px solid $light-grey;
+	border-left: 1px solid $light-grey;
+}
+
+input.form-control {
+	border-radius: 0;
+	height: 40px;
+	border: 1px solid $light-grey;
+}
+
+select.form-control {
+	border-radius: 0;
+	padding-right: 50px;
+	content: "";
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background: $select-image center right no-repeat $white;
+	cursor: pointer;
+}
+
+textarea.form-control {
+	border-radius: 0;
+	min-height: 40px;
+}
+
+.form-control:focus {
+	border: 1px solid $brand-primary;
+	box-shadow: none;
+	border-radius: 0
+}
+
+.help-block {
+	color: #f33;
+	font-size: 0.85em;
+	font-weight: 400;
+	line-height: 1.3em;
+}
+
+.switch {
+    cursor: pointer;
+
+	.fa {
+	    vertical-align: -5px;
+	    margin-right: .25em;
+	}
+
+	.active {
+	    display: none;
+	}
+
+	input[type="radio"] {
+	    position: relative;
+	    z-index: -1;
+	}
+	&.checked {
+		.active {
+		    display: inline-block;
+		}
+		.inactive {
+		    display: none;
+		}
+	}
+}
+
+.disabled {
+    color: #dcdbdb !important;
+    pointer-events: none;
+    cursor: not-allowed;
+
+	.switch span.active {
+	    color: #dcdbdb !important;
+	    pointer-events: none;
+	    cursor: not-allowed;
+	}
+	a {
+		color: #636363 !important;
+	}
+}
+
+.custom-checkbox-fa {
+	input[type="checkbox"]  {
+		opacity: 0;
+	}
+}
+
+
+label {
+
+	input[type="radio"] ~ i.fa.fa-circle-o{
+	    color: #c8c8c8;    display: inline;
+	}
+	input[type="radio"] ~ i.fa.fa-dot-circle-o{
+	    display: none;
+	}
+	input[type="radio"]:checked ~ i.fa.fa-circle-o{
+	    display: none;
+	}
+	input[type="radio"]:checked ~ i.fa.fa-dot-circle-o{
+	    color: #7AA3CC;    display: inline;
+	}
+
+	input[type="checkbox"] ~ i.fa.fa-square-o{
+	    color: #c8c8c8;    display: inline;
+	}
+	input[type="checkbox"] ~ i.fa.fa-check-square-o{
+	    display: none;
+	}
+	input[type="checkbox"]:checked ~ i.fa.fa-square-o{
+	    display: none;
+	}
+	input[type="checkbox"]:checked ~ i.fa.fa-check-square-o{
+	    color: #7AA3CC;    display: inline;
+	}
+
+	input[type="checkbox"]:checked ~ i.fa.fa-check-square-o {
+	    color: $brand-danger !important;
+	    display: inline;
+		left: 2px;
+	}
+
+	&:hover {
+		input[type="radio"] ~ i.fa {
+			color: #7AA3CC;
+		}
+
+		input[type="checkbox"] ~ i.fa {
+			color: #7AA3CC;
+		}
+	}
+
+}
+
+div[data-toggle="buttons"] {
+	label {
+		&:active,
+		&.active {
+			@include vendor(box-shadow, none);
+		}
+	}
+}
+
+.btn.no-shadow .fa {
+	float: left;
+	left: 0;
+	position: absolute;
+	width: 40px;
+}
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 55px;
+	height: 28px;
+	input {
+		opacity: 0;
+		width: 0;
+		height: 0;
+	}
+}
+.ontext { 
+	position: absolute; 
+	font-weight: bold;
+	top: 6px; 
+	left: 8px; 
+	font-size: 10px; 
+	color: $white; 
+	font-family: 'Roboto', sans-serif; 
+}
+
+.sliderbox {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: .4s;
+	&:before {
+		position: absolute;
+		content: "";
+		height: 20px;
+		width: 20px;
+		left: 4px;
+		bottom: 4px;
+		background-color: $white;
+		transition: .4s;
+	}
+	&.round {
+		border-radius: 34px;
+		&:before {
+			border-radius: 50%;
+		}
+	}
+}
+input {
+	&:checked + .sliderbox {
+		background-color: $brand-secondary;
+		&:before {
+			transform: translateX(26px);
+		}
+	}
+	&:focus + .sliderbox {
+		box-shadow: 0 0 1px $brand-secondary;
+	}
+	&.special-input, &.special-input:focus {
+		background: #FFFFD2;
+		border-color: #ccc;
+	}
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 28px; 
+    -webkit-appearance: none;
+    outline: none;
+    background-color:transparent;
+    border: 0; 
+    margin: 8px 0;
+}
+
+/*chrome and opera*/
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #ccc; 
+    height: 6px;
+    border-radius: 6px; 
+    transition: 0.3s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: $brand-secondary; 
+    width: 28px;
+    height: 28px; 
+    border-radius: 50%;
+	margin-top: -12px; 
+	border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/*firefox*/
+input[type="range"]::-moz-focus-outer {
+    border: 0;
+}
+
+input[type="range"]::-moz-range-track {
+    background: #ccc;
+    height: 6px; 
+    border-radius: 6px; 
+}
+
+
+input[type="range"]::-moz-range-thumb {
+    background: $brand-secondary; /*thumbColor*/
+    width: 20px; /*thumbHeight*/
+    height: 20px; /*thumbHeight*/
+	border-radius: 50%;
+	border: none;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-progress {
+    background: $brand-secondary;
+    border-radius: 6px; 
+    height: 6px; 
+}
+
+/*edge and IE*/
+input[type="range"]::-ms-track {
+    background: #ccc; 
+    height: 6px; 
+    border-radius: 6px; 
+    border: none;
+    color: transparent;
+}
+
+input[type="range"]::-ms-thumb {
+    background: $brand-secondary; 
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    margin: 0 6px 0; 
+    box-shadow: 0 0 0 6px #ccc; 
+}
+
+input[type="range"]::-ms-tooltip {
+    display: none; 
+}
+
+input[type="range"]::-ms-fill-lower {
+    background: $brand-secondary; 
+    border-radius: 6px; 
+}
+
+
+  
